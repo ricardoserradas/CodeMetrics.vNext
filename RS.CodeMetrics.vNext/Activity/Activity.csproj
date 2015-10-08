@@ -43,12 +43,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="icon.png" />
+    <Content Include="Files\icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="README.md" />
-    <None Include="task.json" />
-    <None Include="codemetrics.ps1" />
+    <None Include="Files\README.md" />
+    <None Include="Files\task.json" />
+    <None Include="Files\codemetrics.ps1" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

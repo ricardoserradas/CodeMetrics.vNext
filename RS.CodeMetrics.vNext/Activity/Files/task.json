@@ -1,0 +1,61 @@
+﻿{
+  "id": "2CDB53A5-F270-47B5-9750-49FD0437E389",
+  "name": "CodeMetrics",
+  "friendlyName": "Extract Code Metrics",
+  "description": "Extract Code Metrics for your projects during build.",
+  "author": "Ricardo Serradas",
+  "helpMarkDown": "This build task helps you gather more information about your Code Metrics",
+  "category": "Utility",
+  "visibility": [
+    "Build"
+  ],
+  "demands": [ ],
+  "version": {
+    "Major": "0",
+    "Minor": "1",
+    "Patch": "12"
+  },
+  "minimumAgentVersion": "1.83.0",
+  "instanceNameFormat": "Extract Code Metrics $(message)",
+  "inputs": [
+    {
+      "name": "analysisroot",
+      "type": "string",
+      "label": "Analysis Root",
+      "defaultValue": "$(Build.SourcesDirectory)",
+      "required": true,
+      "helpMarkDown": "Do you want Code Metrics to search for dependencies in Global Assembly Cache?"
+    },
+    {
+      "name": "searchgac",
+      "type": "boolean",
+      "label": "Search in GAC?",
+      "defaultValue": true,
+      "required": true,
+      "helpMarkDown": "Do you want Code Metrics to search for dependencies in Global Assembly Cache?"
+    },
+    {
+      "name": "ignoregeneratedcode",
+      "type": "boolean",
+      "label": "Ignore generated code?",
+      "defaultValue": true,
+      "required": true,
+      "helpMarkDown": "Do you want Code Metrics to ignore automatically generated code?"
+    },
+    {
+      "name": "fileSearchPattern",
+      "type": "string",
+      "label": "File Search Pattern",
+      "defaultValue": "*.dll",
+      "required": true,
+      "helpMarkDown": "The search pattern for DLLs that should be analyzed."
+    }
+  ],
+  "execution": {
+    "PowerShell": {
+      "target": "$(currentDirectory)\\codemetrics.ps1",
+      "argumentFormat": "",
+      "workingDirectory": "$(currentDirectory)"
+    }
+  }
+}
